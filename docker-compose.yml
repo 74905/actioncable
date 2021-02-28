@@ -1,0 +1,26 @@
+version: "3"
+
+volumes:
+  db-data:
+services:
+  web:
+    build: .
+    ports:
+      - "4001:4001"
+    volumes:
+      - ".:/actioncable"
+    environment:
+      - "DATABASE_PASSWORD=postgres"
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
+    ports:
+      - "3306:3306"

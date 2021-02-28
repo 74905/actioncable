@@ -1,0 +1,10 @@
+<div class="chat" id="<%= chat.id %>">
+      <div class="mycomment">
+      <%= simple_format(chat.message) %><br>
+      <%= chat.created_at.strftime('%Y-%m-%d %H:%M') %>
+      </div>
+     
+      <div class="chat_delete">
+         <button id="<%= chat.id %>" class="delete-btn btn btn-danger mr-5">コメントを削除</button>
+      </div>
+</div>

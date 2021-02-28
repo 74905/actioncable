@@ -1,0 +1,11 @@
+<% @rooms.each do |room| %>
+<%= link_to room_path(room) do %>
+<%= room.name %>
+<%= room.id%>
+<% end %>
+<% end %>
+
+<%= form_with model: @room, local:true do |f| %>
+<%= f.hidden_field :name, :value => "ChatRoom" %>
+<%= f.submit "作成"%>
+<% end %>

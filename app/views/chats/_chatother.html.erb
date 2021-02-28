@@ -1,0 +1,10 @@
+<div class="chat" id=<%= chat.id %>>
+  <div class="fukidasi">     
+      <div class="chatting">
+       <div class="says">
+        <%= simple_format(chat.message) %><br>
+       </div>
+       <%= chat.created_at.strftime('%Y-%m-%d %H:%M') %>
+      </div>
+   </div>
+</div>

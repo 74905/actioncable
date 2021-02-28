@@ -1,0 +1,10 @@
+<div id="messages" data-room_id="<%= @room.id %>"></div>
+<div id="show_user" data-show_user="<%= current_user.id %>"></div>
+<div class="chat_box">
+  <div id="chats">
+    <%= render @chats %>
+  </div>
+</div>
+
+<textarea type="text" data-behavior="chat_speaker" class="from-control"></textarea>
+<button class="chat_submit btn btn-info" >コメントを送信</button>
